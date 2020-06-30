@@ -1,0 +1,12 @@
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\bin\Debug\Proyecto_Algoritmos_Memoria.exe.config
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\bin\Debug\Proyecto_Algoritmos_Memoria.exe
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\bin\Debug\Proyecto_Algoritmos_Memoria.pdb
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\bin\Debug\Proyecto_Algoritmos_Memoria.xml
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.vbprojAssemblyReference.cache
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.Form1.resources
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.Resources.resources
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.vbproj.GenerateResource.cache
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.vbproj.CoreCompileInputs.cache
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.exe
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.xml
+E:\Documentos\UTP\Cuarto_Anio\Sistemas Operativos\Proyecto_2\Proyecto_Algoritmos_Memoria\obj\Debug\Proyecto_Algoritmos_Memoria.pdb
