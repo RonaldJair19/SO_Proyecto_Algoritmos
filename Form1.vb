@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Public Vector(15) As Integer
+    Public Vector As New List(Of String)
     Public Cont As Integer = 0
     Public VectorConcat As New List(Of String)
     Public VectorFinal As New List(Of String)
@@ -42,7 +42,7 @@
                 If i = 0 Then
                     VectorConcat.Add(Caracter)
                 Else
-                    VectorConcat(k) = (Caracter & VectorConcat(k))
+                    VectorConcat(k) = Caracter & VectorConcat(k)
                     'TextBoxValorPulsos.Text = VectorConcat(i)
                 End If
                 dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
@@ -65,10 +65,10 @@
     End Sub
 
     Private Sub ButtonAgregar_Click(sender As Object, e As EventArgs) Handles ButtonAgregar.Click
-        Dim Valor As Integer
-        Valor = Val(TextBoxPulsos.Text)
+        Dim Valor As String
+        Valor = TextBoxPulsos.Text.ToString
         TextBoxValorPulsos.Text = TextBoxPulsos.Text + vbCrLf + TextBoxValorPulsos.Text
-        Vector(Cont) = Valor
+        Vector.Add(Valor)
         Cont += 1
         TextBoxPulsos.Clear()
     End Sub

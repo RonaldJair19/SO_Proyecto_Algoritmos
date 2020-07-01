@@ -124,7 +124,7 @@ Partial Class Form1
         Me.TextBoxValorPulsos.Multiline = True
         Me.TextBoxValorPulsos.Name = "TextBoxValorPulsos"
         Me.TextBoxValorPulsos.ReadOnly = True
-        Me.TextBoxValorPulsos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.TextBoxValorPulsos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBoxValorPulsos.Size = New System.Drawing.Size(386, 88)
         Me.TextBoxValorPulsos.TabIndex = 10
         '
