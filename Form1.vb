@@ -6,20 +6,21 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonTerminar.Click
+        Dim Palabra As String
+        Dim Caracter As String
         Dim dgv As New DataGridView
         Controls.Add(dgv)
         dgv.Location = New Point(12, 260)
         dgv.Size = New Size(870, 250)
         'Dim c As Integer = CInt(InputBox("How many columns", "Columns", "3"))
-        Dim c As Integer = Val(N_ContBits.Text)
+        Dim c As Integer = Cont
         Dim r As Integer = Val(TB_CuadrosPag.Text)
-        Dim i As Integer
 
-        For cc As Integer = 0 To c
+        For cc As Integer = 0 To c + 1
             Dim nc As New DataGridViewTextBoxColumn
             If cc = 0 Then
                 nc.Name = "Bits"
-            ElseIf cc = c Then
+            ElseIf cc = c + 1 Then
                 nc.Name = "Suma"
             Else
                 nc.Name = Vector(cc - 1).ToString
@@ -28,6 +29,24 @@
         Next
         dgv.Rows.Add(r - 1)
         TabControl1.TabPages(0).Controls.Add(dgv)
+
+
+        'Funciona el separador de caracteres, ahora hay que ir separando cada uno de los valores del vector e ir agregando al datagrid en sus celdas e ir rellenando con 0 a la derecha
+        For i As Integer = 0 To Cont
+            Palabra = Vector(i).ToString
+            For j As Integer = 1 To Len(Palabra)
+                Caracter = Mid(Palabra, j, 1)
+
+
+                dgv.Rows(i).Cells(2).Value = Caracter
+            Next
+        Next
+        'Palabra = Vector(0).ToString
+
+        'dgv.Rows(2).Cells(2).Value = Caracter
+
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
