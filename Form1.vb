@@ -1,6 +1,8 @@
 ﻿Public Class Form1
     Public Vector(15) As Integer
     Public Cont As Integer = 0
+    Public VectorConcat As New List(Of String)
+    Public VectorFinal As New List(Of String)
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
@@ -32,13 +34,19 @@
 
 
         'Funciona el separador de caracteres, ahora hay que ir separando cada uno de los valores del vector e ir agregando al datagrid en sus celdas e ir rellenando con 0 a la derecha
-        For i As Integer = 0 To Cont
+        For i As Integer = 0 To Cont - 1 Step 1
             Palabra = Vector(i).ToString
-            For j As Integer = 1 To Len(Palabra)
-                Caracter = Mid(Palabra, j, 1)
-
-
-                dgv.Rows(i).Cells(2).Value = Caracter
+            For k As Integer = 0 To Len(Palabra) - 1 Step 1
+                Caracter = Mid(Palabra, k + 1, 1)
+                'Aux = Caracter + Aux
+                If i = 0 Then
+                    VectorConcat.Add(Caracter)
+                Else
+                    VectorConcat(k) = (Caracter & VectorConcat(k))
+                    'TextBoxValorPulsos.Text = VectorConcat(i)
+                End If
+                dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
+                Caracter = " "
             Next
         Next
         'Palabra = Vector(0).ToString
