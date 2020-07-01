@@ -11,6 +11,7 @@
         Dim Palabra As String
         Dim Caracter As String
         Dim dgv As New DataGridView
+        Dim CB As New ConversorBinario
         Controls.Add(dgv)
         dgv.Location = New Point(12, 260)
         dgv.Size = New Size(870, 250)
@@ -33,6 +34,7 @@
         TabControl1.TabPages(0).Controls.Add(dgv)
 
         Dim rellenador As String = "0"
+        Dim cont_lista As Integer = 0
         'Funciona el separador de caracteres, ahora hay que ir separando cada uno de los valores del vector e ir agregando al datagrid en sus celdas e ir rellenando con 0 a la derecha
         For i As Integer = 0 To Cont - 1 Step 1
             Palabra = Vector(i).ToString
@@ -51,15 +53,16 @@
                 dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k) + rellenador
                 Caracter = " "
                 rellenador = "0"
+                cont_lista = +1
             Next
-            Next
+        Next
         'Palabra = Vector(0).ToString
-
         'dgv.Rows(2).Cells(2).Value = Caracter
-
-
-
+        For i As Integer = 0 To cont_lista
+            dgv.Rows(i).Cells(c + 1).Value = CB.Convertidor(dgv.Rows(i).Cells(c).Value)
+        Next
     End Sub
+
 
 
 
