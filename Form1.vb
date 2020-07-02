@@ -35,6 +35,7 @@
         For u As Integer = 0 To r - 2
             dgv.Rows(u).Cells(0).Value = u
         Next
+        Dim a As Integer
         Dim rellenador As String = "0"
         Dim cont_lista As Integer = 0
         'Funciona el separador de caracteres, ahora hay que ir separando cada uno de los valores del vector e ir agregando al datagrid en sus celdas e ir rellenando con 0 a la derecha
@@ -57,7 +58,17 @@
                 '    rellenador &= "0"
                 '    dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k) + rellenador
                 'Next
-                dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
+                If Len(VectorConcat(k)) < N_ContBits.Value Then
+                    a = N_ContBits.Value - Len(VectorConcat(k)) - 1
+                    For p As Integer = 0 To a
+                        dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k) + rellenador
+                        rellenador &= "0"
+                    Next
+
+                End If
+
+
+                'dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
                 'If (i + 1) = (c - 1) Then
                 '    VectorFinal.Add(dgv.Rows(k).Cells(i + 1).Value)
                 'End If
