@@ -17,7 +17,7 @@
         dgv.Size = New Size(870, 250)
         'Dim c As Integer = CInt(InputBox("How many columns", "Columns", "3"))
         Dim c As Integer = Cont
-        Dim r As Integer = Val(TB_CuadrosPag.Text)
+        Dim r As Integer = Val(TB_CuadrosPag.Text) + 1
 
         For cc As Integer = 0 To c + 1
             Dim nc As New DataGridViewTextBoxColumn
@@ -36,21 +36,28 @@
         Dim rellenador As String = "0"
         Dim cont_lista As Integer = 0
         'Funciona el separador de caracteres, ahora hay que ir separando cada uno de los valores del vector e ir agregando al datagrid en sus celdas e ir rellenando con 0 a la derecha
-        For i As Integer = 0 To Cont - 1 Step 1
+        For i As Integer = 0 To Vector.Count - 1 Step 1
             Palabra = Vector(i).ToString
             For k As Integer = 0 To Len(Palabra) - 1 Step 1
                 Caracter = Mid(Palabra, k + 1, 1)
                 'Aux = Caracter + Aux
                 If i = 0 Then
                     VectorConcat.Add(Caracter)
+                    'dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
                 Else
                     VectorConcat(k) = Caracter & VectorConcat(k)
                     'TextBoxValorPulsos.Text = VectorConcat(i)
                 End If
+                'If k < VectorConcat.Count Then
+                '    dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
+                'End If
                 For l As Integer = 0 To N_ContBits.Value - Len(VectorConcat(k)) - 2
                     rellenador &= "0"
+                    dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k) + rellenador
                 Next
-                dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k) + rellenador
+                'If (i + 1) = (c - 1) Then
+                '    VectorFinal.Add(dgv.Rows(k).Cells(i + 1).Value)
+                'End If
                 Caracter = " "
                 rellenador = "0"
                 cont_lista = +1
@@ -58,8 +65,14 @@
         Next
         'Palabra = Vector(0).ToString
         'dgv.Rows(2).Cells(2).Value = Caracter
-        For i As Integer = 0 To cont_lista
+        'For j As Integer = 0 To Cont
+        '    VectorFinal.Add(dgv.Rows(j).Cells(c).Value)
+        'Next
+
+
+        For i As Integer = 0 To VectorConcat.Count - 1
             dgv.Rows(i).Cells(c + 1).Value = CB.Convertidor(dgv.Rows(i).Cells(c).Value)
+            'dgv.Rows(i).Cells(c + 1).Value = CB.Convertidor(VectorFinal(i))
         Next
     End Sub
 
