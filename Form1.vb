@@ -32,7 +32,9 @@
         Next
         dgv.Rows.Add(r - 1)
         TabControl1.TabPages(0).Controls.Add(dgv)
-
+        For u As Integer = 0 To r - 2
+            dgv.Rows(u).Cells(0).Value = u
+        Next
         Dim rellenador As String = "0"
         Dim cont_lista As Integer = 0
         'Funciona el separador de caracteres, ahora hay que ir separando cada uno de los valores del vector e ir agregando al datagrid en sus celdas e ir rellenando con 0 a la derecha
@@ -51,10 +53,11 @@
                 'If k < VectorConcat.Count Then
                 '    dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
                 'End If
-                For l As Integer = 0 To N_ContBits.Value - Len(VectorConcat(k)) - 2
-                    rellenador &= "0"
-                    dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k) + rellenador
-                Next
+                'For l As Integer = 0 To N_ContBits.Value - Len(VectorConcat(k)) - 2
+                '    rellenador &= "0"
+                '    dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k) + rellenador
+                'Next
+                dgv.Rows(k).Cells(i + 1).Value = VectorConcat(k)
                 'If (i + 1) = (c - 1) Then
                 '    VectorFinal.Add(dgv.Rows(k).Cells(i + 1).Value)
                 'End If
@@ -70,7 +73,7 @@
         'Next
 
 
-        For i As Integer = 0 To VectorConcat.Count - 1
+        For i As Integer = 0 To r - 2
             dgv.Rows(i).Cells(c + 1).Value = CB.Convertidor(dgv.Rows(i).Cells(c).Value)
             'dgv.Rows(i).Cells(c + 1).Value = CB.Convertidor(VectorFinal(i))
         Next
@@ -83,6 +86,10 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ButtonAgregar.Enabled = True
         ButtonTerminar.Enabled = True
+        TextBoxPulsos.Enabled = True
+        TextBoxValorPulsos.Enabled = True
+        ButtonCero.Enabled = True
+        ButtonUno.Enabled = True
 
 
     End Sub
@@ -90,9 +97,17 @@
     Private Sub ButtonAgregar_Click(sender As Object, e As EventArgs) Handles ButtonAgregar.Click
         Dim Valor As String
         Valor = TextBoxPulsos.Text.ToString
-        TextBoxValorPulsos.Text = TextBoxPulsos.Text + vbCrLf + TextBoxValorPulsos.Text
+        TextBoxValorPulsos.Text = Valor + vbCrLf + TextBoxValorPulsos.Text
         Vector.Add(Valor)
         Cont += 1
         TextBoxPulsos.Clear()
+    End Sub
+
+    Private Sub ButtonCero_Click(sender As Object, e As EventArgs) Handles ButtonCero.Click
+        TextBoxPulsos.Text = "0" & TextBoxPulsos.Text
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles ButtonUno.Click
+        TextBoxPulsos.Text = "1" & TextBoxPulsos.Text
     End Sub
 End Class

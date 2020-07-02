@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPageEnvejecimiento = New System.Windows.Forms.TabPage()
         Me.ButtonAgregar = New System.Windows.Forms.Button()
@@ -40,9 +41,18 @@ Partial Class Form1
         Me.TabPageP_M_PA = New System.Windows.Forms.TabPage()
         Me.TabPageSP = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ButtonCero = New System.Windows.Forms.Button()
+        Me.ButtonUno = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPageEnvejecimiento.SuspendLayout()
         CType(Me.N_ContBits, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -63,6 +73,8 @@ Partial Class Form1
         '
         Me.TabPageEnvejecimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPageEnvejecimiento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.TabPageEnvejecimiento.Controls.Add(Me.ButtonUno)
+        Me.TabPageEnvejecimiento.Controls.Add(Me.ButtonCero)
         Me.TabPageEnvejecimiento.Controls.Add(Me.ButtonAgregar)
         Me.TabPageEnvejecimiento.Controls.Add(Me.ButtonTerminar)
         Me.TabPageEnvejecimiento.Controls.Add(Me.TextBoxValorPulsos)
@@ -93,7 +105,7 @@ Partial Class Form1
         Me.ButtonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonAgregar.Font = New System.Drawing.Font("Corbel", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonAgregar.ForeColor = System.Drawing.Color.White
-        Me.ButtonAgregar.Location = New System.Drawing.Point(546, 97)
+        Me.ButtonAgregar.Location = New System.Drawing.Point(504, 97)
         Me.ButtonAgregar.Name = "ButtonAgregar"
         Me.ButtonAgregar.Size = New System.Drawing.Size(90, 35)
         Me.ButtonAgregar.TabIndex = 12
@@ -111,7 +123,7 @@ Partial Class Form1
         Me.ButtonTerminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonTerminar.Font = New System.Drawing.Font("Corbel", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonTerminar.ForeColor = System.Drawing.Color.White
-        Me.ButtonTerminar.Location = New System.Drawing.Point(752, 97)
+        Me.ButtonTerminar.Location = New System.Drawing.Point(616, 97)
         Me.ButtonTerminar.Name = "ButtonTerminar"
         Me.ButtonTerminar.Size = New System.Drawing.Size(102, 35)
         Me.ButtonTerminar.TabIndex = 11
@@ -120,6 +132,7 @@ Partial Class Form1
         '
         'TextBoxValorPulsos
         '
+        Me.TextBoxValorPulsos.Enabled = False
         Me.TextBoxValorPulsos.Location = New System.Drawing.Point(502, 138)
         Me.TextBoxValorPulsos.Multiline = True
         Me.TextBoxValorPulsos.Name = "TextBoxValorPulsos"
@@ -147,6 +160,7 @@ Partial Class Form1
         '
         'TextBoxPulsos
         '
+        Me.TextBoxPulsos.Enabled = False
         Me.TextBoxPulsos.Location = New System.Drawing.Point(742, 61)
         Me.TextBoxPulsos.Name = "TextBoxPulsos"
         Me.TextBoxPulsos.Size = New System.Drawing.Size(146, 27)
@@ -168,7 +182,7 @@ Partial Class Form1
         Me.N_ContBits.Name = "N_ContBits"
         Me.N_ContBits.Size = New System.Drawing.Size(100, 27)
         Me.N_ContBits.TabIndex = 5
-        Me.N_ContBits.Value = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.N_ContBits.Value = New Decimal(New Integer() {6, 0, 0, 0})
         '
         'Label3
         '
@@ -247,12 +261,95 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Location = New System.Drawing.Point(2, 1)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Panel1.Size = New System.Drawing.Size(926, 141)
         Me.Panel1.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(203, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(510, 39)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Universidad Tecnológica de Panamá"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Candara", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(265, 64)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(377, 36)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Proyecto Sistemas Operativos"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ButtonCero
+        '
+        Me.ButtonCero.BackColor = System.Drawing.Color.DarkRed
+        Me.ButtonCero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonCero.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ButtonCero.Enabled = False
+        Me.ButtonCero.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.ButtonCero.FlatAppearance.BorderSize = 2
+        Me.ButtonCero.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ButtonCero.Font = New System.Drawing.Font("Consolas", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCero.ForeColor = System.Drawing.Color.White
+        Me.ButtonCero.Location = New System.Drawing.Point(768, 96)
+        Me.ButtonCero.Name = "ButtonCero"
+        Me.ButtonCero.Size = New System.Drawing.Size(40, 35)
+        Me.ButtonCero.TabIndex = 13
+        Me.ButtonCero.Text = "0"
+        Me.ButtonCero.UseVisualStyleBackColor = False
+        '
+        'ButtonUno
+        '
+        Me.ButtonUno.BackColor = System.Drawing.Color.DarkRed
+        Me.ButtonUno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonUno.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ButtonUno.Enabled = False
+        Me.ButtonUno.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.ButtonUno.FlatAppearance.BorderSize = 2
+        Me.ButtonUno.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ButtonUno.Font = New System.Drawing.Font("Consolas", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonUno.ForeColor = System.Drawing.Color.White
+        Me.ButtonUno.Location = New System.Drawing.Point(828, 97)
+        Me.ButtonUno.Name = "ButtonUno"
+        Me.ButtonUno.Size = New System.Drawing.Size(40, 35)
+        Me.ButtonUno.TabIndex = 14
+        Me.ButtonUno.Text = "1"
+        Me.ButtonUno.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(34, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(130, 123)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(756, 4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(134, 130)
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
         '
         'Form1
         '
@@ -267,6 +364,10 @@ Partial Class Form1
         Me.TabPageEnvejecimiento.ResumeLayout(False)
         Me.TabPageEnvejecimiento.PerformLayout()
         CType(Me.N_ContBits, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -289,4 +390,10 @@ Partial Class Form1
     Friend WithEvents TextBoxValorPulsos As TextBox
     Friend WithEvents ButtonAgregar As Button
     Friend WithEvents ButtonTerminar As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ButtonUno As Button
+    Friend WithEvents ButtonCero As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
